@@ -153,6 +153,10 @@ module ActiveAdmin
       {
         :sort_order => "#{resource_class.respond_to?(:primary_key) ? resource_class.primary_key : 'id'}_desc"
       }
+    rescue
+      {
+        :sort_order => "id_desc" 
+      }
     end
 
     def default_csv_builder
