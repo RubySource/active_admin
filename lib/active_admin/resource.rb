@@ -149,11 +149,14 @@ module ActiveAdmin
 
     private
 
+
+
+
     def default_options
       {
         :sort_order => "#{resource_class.respond_to?(:primary_key) ? resource_class.primary_key : 'id'}_desc"
       }
-    rescue
+    rescue => ex
       {
         :sort_order => "id_desc" 
       }
